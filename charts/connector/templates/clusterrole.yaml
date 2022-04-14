@@ -1,0 +1,18 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ template "eg-connector.fullname" . }}-ro
+  namespace: {{ template "eg-connector.namespace" . }}
+  labels:
+    app: {{ template "eg-connector.name" . }}
+{{ include "eg-connector.labels" . | indent 4 }}
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+rules:
+- apiGroups:
+  - ""
+  resources: ["services", "pods"]
+  verbs:
+  - get
+  - list
+  - watch

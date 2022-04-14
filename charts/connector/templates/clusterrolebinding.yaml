@@ -1,0 +1,15 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "eg-connector.fullname" . }}-sa-binding
+  labels:
+    app: {{ template "eg-connector.name" . }}
+{{ include "eg-connector.labels" . | indent 4 }}
+subjects:
+- kind: ServiceAccount
+  name: {{ template "eg-connector.fullname" . }}-api-access
+  namespace: {{ template "eg-connector.namespace" . }}
+roleRef:
+  kind: ClusterRole
+  name: {{ template "eg-connector.fullname" . }}-ro
+  apiGroup: rbac.authorization.k8s.io

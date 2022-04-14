@@ -1,0 +1,43 @@
+#This is a YAML formatted default values file for connector helm chart.
+#Define values to be passed into the chart templates.
+
+# Provide a connectorToken which will be required to connect the EG k8s connector to the EG Cloud
+# A connectorToken must be provided
+connectorToken: 
+
+# Provide a name to be used in you labels i.e. `labels.app:`, `matchLabels.app:` etc.
+nameOverride: 
+
+# Provide a name to be used with all the resource names in the chart
+fullnameOverride: 
+
+# Provide a namespace for the chart deployment
+# if the namespace is not overrriden here in the values file or specified explicitely at the time of chart
+# installation, the resources will get deployed in the default namespace.
+namespaceOverride: 
+
+# Provide the number of replicas to be run for the connector
+replicaCount: 3
+
+# Provide the container image and image tag to be used.
+image:
+  repository: public.ecr.aws/d5r3l1k3/connector-e189b62d9b1b611cf06b815f858a2c42
+  tag: latest
+
+# Add Labels to apply to all the connector helm chart resources
+commonLabels: {}
+  # exampleLabel: labelValue
+  # slabelThis: appEG
+
+# Provide any annotations that you would like to add to the deployment.
+annotations: {}
+
+# Service account for the connnector to use.
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+  # Annotations to add to the service account
+  annotations: {}

@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: {{ template "eg-connector.namespace" . }}
+  name: {{ template "eg-connector.fullname" . }}
+  labels:
+    app: {{ template "eg-connector.name" . }}
+{{ include "eg-connector.labels" . | indent 4 }}
+  {{- with .Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end  }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "eg-connector.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "eg-connector.name" . }}
+    spec:
+      serviceAccountName: {{ template "eg-connector.serviceAccountName" . }}
+      containers:
+      - name: eg-connector
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        env:
+        - name: CONNECTOR_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "eg-connector.secretName" . }}
+              key: connectorToken
+        - name: EG_ADDR
+          value: global.connector.edge-guardian.io:443
+        - name: NERVE_ADDR
+          value: https://nerve-grpc.edge-guardian.io:443
+        - name: EG_TLD
+          value: edge-guardian.io
+        - name: CONFIG_DIR
+          value: /eg/data/
+        - name: LOG_JSON
+          value: '1'
+        - name: RUST_BACKTRACE
+          value: '1'
+        - name: ENABLE_AUTOUPGRADE
+          value: 'true'
+        - name: HEALTH_LISTEN_ADDR
+          value: '0.0.0.0:8080'
+        - name: RUST_LOG
+          value: 'info,eg[{trace_level=1}]=debug,eg[{trace_level=2}]=trace,eg[{trace_level=3}]=trace,eg[{trace_level=4}]=trace,[{trace_level=3}]=debug,[{trace_level=4}]=trace'
+      securityContext:
+        fsGroup: 65534
