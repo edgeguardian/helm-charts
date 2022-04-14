@@ -5,7 +5,7 @@
 ## Get Repo Info
 
 ```console
-helm repo add edgeguardian https://edgeguardian.github.io/
+helm repo add edgeguardian https://edgeguardian.github.io/helm-charts
 helm repo update
 ```
 

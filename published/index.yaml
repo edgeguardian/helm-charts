@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  connector:
+  - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2022-04-14T14:26:28.335005-07:00"
+    description: Innovation in the field of Zero Trust Network Security
+    digest: b4995920a9acc3cc8749e281139a95e5628237ed194009d96ae8095f6115d399
+    home: https://login.edge-guardian.io
+    icon: https://login.edge-guardian.io/ui/eg-logo.svg
+    keywords:
+    - eg
+    - eg-connector
+    - EdgeGuardian
+    - edge-guardian
+    maintainers:
+    - email: dev@edgeguard.io
+      name: EdgeGuard developers
+    name: connector
+    type: application
+    urls:
+    - packages/connector-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-04-14T14:26:28.334501-07:00"

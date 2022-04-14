@@ -1,11 +1,14 @@
 apiVersion: v2
-name: eg-connector
+name: connector
 version: 0.1.0
 appVersion: 0.4.0
 type: application
 description: Innovation in the field of Zero Trust Network Security
 home: https://login.edge-guardian.io
 icon: https://login.edge-guardian.io/ui/eg-logo.svg
+maintainers:
+  - name: EdgeGuard developers
+    email: dev@edgeguard.io
 keywords:
   - "eg"
   - "eg-connector"
