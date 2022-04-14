@@ -6,7 +6,7 @@
 First you must have [Helm](https://helm.sh) installed.
 
 ```console
-helm repo add edgeguardian https://edgeguardian.github.io/
+helm repo add edgeguardian https://edgeguardian.github.io/helm-charts
 helm search repo edgeguardian
 ```
 
