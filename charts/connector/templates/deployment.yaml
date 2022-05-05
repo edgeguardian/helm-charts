@@ -20,7 +20,7 @@ spec:
       labels:
         app: {{ template "eg-connector.name" . }}
     spec:
-      serviceAccountName: {{ template "eg-connector.serviceAccountName" . }}-api-access
+      serviceAccountName: {{ template "eg-connector.serviceAccountName" . }}
       containers:
       - name: eg-connector
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

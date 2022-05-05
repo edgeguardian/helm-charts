@@ -56,7 +56,7 @@ helm.sh/chart: {{ template "eg-connector.chartName" . }}
 {{/* Create the name of eg-connector service account to use */}}
 {{- define "eg-connector.serviceAccountName" -}}
   {{- if .Values.serviceAccount.create -}}
-    {{ default (include "eg-connector.fullname" .) .Values.serviceAccount.name }}
+    {{ default (printf "%s-api-access" (include "eg-connector.fullname" .)) .Values.serviceAccount.name }}
   {{- else -}}
     {{ default "default" .Values.serviceAccount.name }}
   {{- end -}}

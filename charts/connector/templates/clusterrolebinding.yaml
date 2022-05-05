@@ -7,7 +7,7 @@ metadata:
 {{ include "eg-connector.labels" . | indent 4 }}
 subjects:
 - kind: ServiceAccount
-  name: {{ template "eg-connector.fullname" . }}-api-access
+  name: {{ template "eg-connector.serviceAccountName" . }}
   namespace: {{ template "eg-connector.namespace" . }}
 roleRef:
   kind: ClusterRole
