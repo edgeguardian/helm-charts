@@ -48,5 +48,19 @@ spec:
           value: '0.0.0.0:8080'
         - name: RUST_LOG
           value: 'info,eg[{trace_level=1}]=debug,eg[{trace_level=2}]=trace,eg[{trace_level=3}]=trace,eg[{trace_level=4}]=trace,[{trace_level=3}]=debug,[{trace_level=4}]=trace'
+        - name: EG_L3VPN_ENABLED
+          value: 'true'
+        securityContext:
+          capabilities:
+            add:
+            - NET_ADMIN
+        volumeMounts:
+        - mountPath: /dev/net/tun
+          name: dev-tun
       securityContext:
         fsGroup: 65534
+      volumes:
+      - hostPath:
+          path: /dev/net/tun
+          type: CharDevice
+        name: dev-tun
