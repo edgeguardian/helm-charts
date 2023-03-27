@@ -32,6 +32,9 @@ commonLabels: {}
 # Provide any annotations that you would like to add to the deployment.
 annotations: {}
 
+# Provide node selectors that you would like to add to the deployment.
+nodeSelector: {}
+
 # Service account for the connnector to use.
 serviceAccount:
   # Specifies whether a service account should be created
