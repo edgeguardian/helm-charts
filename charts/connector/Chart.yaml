@@ -1,6 +1,6 @@
 apiVersion: v2
 name: connector
-version: 0.2.0
+version: 0.3.0
 appVersion: 0.4.0
 type: application
 description: Innovation in the field of Zero Trust Network Security
