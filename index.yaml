@@ -3,9 +3,49 @@ entries:
   connector:
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2022-04-14T14:26:28.335005-07:00"
+    created: "2023-03-28T10:00:00.375074-07:00"
     description: Innovation in the field of Zero Trust Network Security
-    digest: b4995920a9acc3cc8749e281139a95e5628237ed194009d96ae8095f6115d399
+    digest: 63bc9a0c0f402b0eaefc979ff2dfbb1b15fb7faf63307530e8d0821aeb1f460a
+    home: https://login.edge-guardian.io
+    icon: https://login.edge-guardian.io/ui/eg-logo.svg
+    keywords:
+    - eg
+    - eg-connector
+    - EdgeGuardian
+    - edge-guardian
+    maintainers:
+    - email: dev@edgeguard.io
+      name: EdgeGuard developers
+    name: connector
+    type: application
+    urls:
+    - packages/connector-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2023-03-28T10:00:00.374698-07:00"
+    description: Innovation in the field of Zero Trust Network Security
+    digest: a8e2afc2e07bf925c122fdcc80fc81cd370ed7ec7cdcd7861c5aa2648d7a24f4
+    home: https://login.edge-guardian.io
+    icon: https://login.edge-guardian.io/ui/eg-logo.svg
+    keywords:
+    - eg
+    - eg-connector
+    - EdgeGuardian
+    - edge-guardian
+    maintainers:
+    - email: dev@edgeguard.io
+      name: EdgeGuard developers
+    name: connector
+    type: application
+    urls:
+    - packages/connector-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2023-03-28T10:00:00.374298-07:00"
+    description: Innovation in the field of Zero Trust Network Security
+    digest: 8cd5d87533278dd473affda5f333817712790aafb859b4e01d0ae7ea226390d8
     home: https://login.edge-guardian.io
     icon: https://login.edge-guardian.io/ui/eg-logo.svg
     keywords:
@@ -21,4 +61,4 @@ entries:
     urls:
     - packages/connector-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-14T14:26:28.334501-07:00"
+generated: "2023-03-28T10:00:00.373733-07:00"
