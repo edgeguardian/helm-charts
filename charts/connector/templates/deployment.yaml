@@ -57,9 +57,10 @@ spec:
         volumeMounts:
         - mountPath: /dev/net/tun
           name: dev-tun
-        {{- with .Values.nodeSelector }}
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
       securityContext:
         fsGroup: 65534
       volumes:
