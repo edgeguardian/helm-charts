@@ -24,6 +24,8 @@ spec:
       containers:
       - name: eg-connector
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+          - containerPort: 4443
         env:
         - name: CONNECTOR_TOKEN
           valueFrom:

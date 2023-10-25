@@ -44,3 +44,10 @@ serviceAccount:
   name: ""
   # Annotations to add to the service account
   annotations: {}
+
+# If set to true, we will provision a load balancer for the connector to enable
+# inbound access.
+provisionInboundAccess: false
+# Array of strings of CIDRs (e.g., ["1.0.0.0/8", "2.3.4.5/32"] to allow inbound
+# access for.  If empty, it provisions for all IPs.
+inboundAccessSourceCidrs: []

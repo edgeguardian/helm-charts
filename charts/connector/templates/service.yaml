@@ -1,0 +1,32 @@
+{{- if .Values.provisionInboundAccess }}
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: {{ template "eg-connector.namespace" . }}
+  name: connector-inbound
+  # See valid annotations here: https://kubernetes-sigs.github.io/aws-load-balancer-controller/v2.1/guide/service/annotations/
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+    service.beta.kubernetes.io/aws-load-balancer-type: external
+    # The documentation says that the above field overrides this target group attributes,
+    # but when I saw the load balancer config this wasn't enabled.  Including this config
+    # just in case.
+    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
+    service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: stickiness.enabled=true,stickiness.type=source_ip
+    service.beta.kubernetes.io/aws-load-balancer-healthcheck-protocol: TCP
+{{- if .Values.inboundAccessSourceCidrs }}
+    service.beta.kubernetes.io/aws-load-balancer-source-ranges: "{{ join "," .Values.inboundAccessSourceCidrs }}"
+{{- end }}
+spec:
+  type: LoadBalancer
+  # This is gated behind feature flag ServiceLBNodePortControl, only available
+  # from k8s 1.22, currently in Beta.
+  selector:
+    app: {{ template "eg-connector.name" . }}
+  ports:
+    - protocol: TCP
+      port: 443
+      targetPort: 4443
+      name: https
+{{- end }}
