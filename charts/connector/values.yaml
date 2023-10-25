@@ -44,3 +44,9 @@ serviceAccount:
   name: ""
   # Annotations to add to the service account
   annotations: {}
+
+# Additional environment configuration
+additionalEnv:
+  TUN_IP_ADDR: '100.64.0.1'
+  TUN_IP_MASKLEN: '10'
+  EG_TLD: 'edge-guardian.io'

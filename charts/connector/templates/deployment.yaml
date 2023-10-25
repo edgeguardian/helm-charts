@@ -30,12 +30,8 @@ spec:
             secretKeyRef:
               name: {{ template "eg-connector.secretName" . }}
               key: connectorToken
-        - name: EG_ADDR
-          value: global.connector.edge-guardian.io:443
-        - name: NERVE_ADDR
-          value: https://nerve-grpc.edge-guardian.io:443
         - name: EG_TLD
-          value: edge-guardian.io
+          value: '{{ .Values.additionalEnv.EG_TLD }}'
         - name: CONFIG_DIR
           value: /eg/data/
         - name: LOG_JSON
@@ -50,6 +46,10 @@ spec:
           value: 'info,eg[{trace_level=1}]=debug,eg[{trace_level=2}]=trace,eg[{trace_level=3}]=trace,eg[{trace_level=4}]=trace,[{trace_level=3}]=debug,[{trace_level=4}]=trace'
         - name: EG_L3VPN_ENABLED
           value: 'true'
+        - name: TUN_IP_ADDR
+          value: '{{ .Values.additionalEnv.TUN_IP_ADDR }}'
+        - name: TUN_IP_MASKLEN
+          value: '{{ .Values.additionalEnv.TUN_IP_MASKLEN }}'
         securityContext:
           capabilities:
             add:
