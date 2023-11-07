@@ -3,9 +3,29 @@ entries:
   connector:
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2023-03-28T11:20:41.083793-07:00"
+    created: "2023-11-07T09:26:03.696311-08:00"
     description: Innovation in the field of Zero Trust Network Security
-    digest: 63bc9a0c0f402b0eaefc979ff2dfbb1b15fb7faf63307530e8d0821aeb1f460a
+    digest: 32d6010b7bb3a0fc55dd5eed6ac61042e172d1fa84015549e0474fb40f0aacd2
+    home: https://login.edge-guardian.io
+    icon: https://login.edge-guardian.io/ui/eg-logo.svg
+    keywords:
+    - eg
+    - eg-connector
+    - EdgeGuardian
+    - edge-guardian
+    maintainers:
+    - email: dev@edgeguard.io
+      name: EdgeGuard developers
+    name: connector
+    type: application
+    urls:
+    - packages/connector-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 0.4.0
+    created: "2023-11-07T09:26:03.696011-08:00"
+    description: Innovation in the field of Zero Trust Network Security
+    digest: 8c9ffb17c8ce1357bfa54282a20c005e3210054be93df5a0080da4c950e9a587
     home: https://login.edge-guardian.io
     icon: https://login.edge-guardian.io/ui/eg-logo.svg
     keywords:
@@ -23,7 +43,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2023-03-28T11:20:41.083431-07:00"
+    created: "2023-11-07T09:26:03.695711-08:00"
     description: Innovation in the field of Zero Trust Network Security
     digest: a8e2afc2e07bf925c122fdcc80fc81cd370ed7ec7cdcd7861c5aa2648d7a24f4
     home: https://login.edge-guardian.io
@@ -43,7 +63,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2023-03-28T11:20:41.083024-07:00"
+    created: "2023-11-07T09:26:03.695394-08:00"
     description: Innovation in the field of Zero Trust Network Security
     digest: 8cd5d87533278dd473affda5f333817712790aafb859b4e01d0ae7ea226390d8
     home: https://login.edge-guardian.io
@@ -61,4 +81,4 @@ entries:
     urls:
     - packages/connector-0.1.0.tgz
     version: 0.1.0
-generated: "2023-03-28T11:20:41.08189-07:00"
+generated: "2023-11-07T09:26:03.694928-08:00"
